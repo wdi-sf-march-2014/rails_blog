@@ -13,17 +13,28 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :comment do
+ 
+  sequence :email do |n|
+    "email#{n}@jade.com"
   end
 
-  factory :post do
-  end
+
+  # factory :comment do
+  # end
+
+  # factory :post do
+  #   title "Rspec"
+  #   body ""
+  # end
 
  factory :user do
-  name "MyString"
-  email "MyString"
-  password_digest "MyString"
-  remember_token "MyString"
+  name "Jade"
+  email
+  password "password"
+  password_confirmation "password"
+  password_digest "password"
+  remember_token "password"
 	end
 	
 end
+
