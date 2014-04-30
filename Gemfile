@@ -36,6 +36,8 @@ group :development, :test do
   gem 'annotate'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'better_errors'
+  gem 'dotenv-rails'
 end
 
 # Use ActiveModel has_secure_password
