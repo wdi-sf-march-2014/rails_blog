@@ -1,7 +1,8 @@
 Blog::Application.routes.draw do
-  root "posts#index"
+	resources :users, :comments, :posts
 
-  resources :posts
-  resources :comments
-  resources :users
+  root 'posts#index'
+
+  get '/signup', to: 'users#new'
+
 end
