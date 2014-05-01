@@ -1,5 +1,8 @@
 class CommentsController < ApplicationController
-  def create
+  before_filter :signed_in_user, only: [:create, :destroy]
+  # before_filter :check_post_owner, only: [:edit, :update, :destroy]
+
+def create
     @comment = Comment.create(comment_params)
     redirect_to post_path(comment_params[:post_id])
   end
@@ -12,7 +15,6 @@ class CommentsController < ApplicationController
   end
 
   private
-
   def comment_params
     params.require(:comment).permit(:body, :post_id)
   end
